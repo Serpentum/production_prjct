@@ -1,0 +1,15 @@
+.navbar {
+  width: 100%;
+  height: var(--navbar-height);
+  background-color: var(--navbar-bg-color);
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 10px;
+}
+
+.linksWrapper {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
