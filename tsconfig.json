@@ -9,7 +9,11 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
+    "paths" : {
+      "*": ["./src/*"]
+    },
+    "skipLibCheck": true
   },
   "ts-node": {
     "compilerOptions": {
