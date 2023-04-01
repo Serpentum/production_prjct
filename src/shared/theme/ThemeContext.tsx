@@ -1,13 +1,13 @@
 import React, {createContext} from 'react';
 
-export enum THEME {
+export enum Theme {
   DEFAULT = "default",
   DARK = "dark",
 }
 
 export interface IThemeContext {
-  theme?: THEME
-  setTheme?: (theme: THEME) => void
+  theme?: Theme
+  setTheme?: (theme: Theme) => void
 }
 
 export const ThemeContext = createContext<IThemeContext>({})
