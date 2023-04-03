@@ -12,22 +12,6 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.ABOUT]: '/about',
 }
 
-interface IRoutePathNamed {
-  path: string,
-  name: string
-}
-
-export const RouteLinks: Record<AppRoutes, IRoutePathNamed> = {
-  [AppRoutes.MAIN]: {
-    path: RoutePath.main,
-    name: 'Главная'
-  },
-  [AppRoutes.ABOUT]: {
-    path: RoutePath.about,
-    name: 'О сайте'
-  },
-}
-
 export const routeConfig: Record<AppRoutes, RouteProps> = {
   [AppRoutes.MAIN]: {
     path: RoutePath.main,

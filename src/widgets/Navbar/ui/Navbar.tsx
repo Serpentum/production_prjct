@@ -13,9 +13,9 @@ export const Navbar: FC<INavbarProps> = ({className}) => {
   return (
     <div className={classNames(cls.navbar, {}, [className])}>
       <div className={cls.rightSide}>
+        <NavLinks />
         <ThemeSwitcher />
         <LanguageSwitcher />
-        <NavLinks />
       </div>
     </div>
   );

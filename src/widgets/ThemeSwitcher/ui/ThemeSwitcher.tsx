@@ -14,10 +14,12 @@ export const ThemeSwitcher = ({className}: IThemeSwitcherProps) => {
   const {theme, toggleTheme} = useTheme()
 
   return (
-    <div className={classNames(cls.ThemeSwitcher, {}, [className])}>
-      <Button onClick={toggleTheme} theme={ThemeButton.CLEAR}>
-        {theme === Theme.DEFAULT ? <ThemeDarkIco className={cls.ico} /> : <ThemeDefaultIco className={cls.ico} />}
-      </Button>
-    </div>
+    <Button onClick={toggleTheme} theme={ThemeButton.CLEAR}>
+      <div className={classNames(cls.ThemeSwitcher, {}, [className])}>
+        <div className={classNames(cls.switcherBackPlate, {[cls.checked]: theme !== Theme.DEFAULT})}>
+          {theme === Theme.DEFAULT ? <ThemeDarkIco className={cls.ico} /> : <ThemeDefaultIco className={cls.ico} />}
+        </div>
+      </div>
+    </Button>
   );
 };

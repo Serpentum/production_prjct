@@ -1,3 +1,11 @@
 {
-  "currentLang": "РУС"
+  "currentLang": "РУС",
+  "pageTitle": {
+    "mainPageTitle": "Главная",
+    "aboutPageTitle": "О сайте"
+  },
+  "navigationLinks": {
+    "/": "Главная",
+    "/about": "О сайте"
+  }
 }

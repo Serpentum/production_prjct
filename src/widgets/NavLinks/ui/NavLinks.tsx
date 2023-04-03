@@ -1,8 +1,9 @@
-import {classNames} from "shared/lib/helpers/classNames";
 import cls from './NavLinks.module.scss'
-import {RouteLinks} from "shared/config/routerConfig/routerConfig";
-import {AppLink} from "shared/ui/AppLink";
 import {useLocation} from "react-router-dom";
+import {useTranslation} from "react-i18next";
+import {RoutePath} from "shared/config/routerConfig/routerConfig";
+import {classNames} from "shared/lib/helpers/classNames";
+import {AppLink} from "shared/ui/AppLink";
 
 interface INavLinksProps {
   className?: string
@@ -10,18 +11,19 @@ interface INavLinksProps {
 
 export const NavLinks = ({className}: INavLinksProps) => {
   const {pathname} = useLocation()
+  const {t} = useTranslation()
 
   return (
     <div className={classNames(cls.linksWrapper, {}, [className])}>
       {
-        Object.values(RouteLinks)
-          .map(({path, name}) =>
+        Object.values(RoutePath)
+          .map(path =>
             <AppLink
               key={path}
               to={path}
               underline={path === pathname}
             >
-              {name}
+              {t(`navigationLinks.${path}`)}
             </AppLink>
           )
       }

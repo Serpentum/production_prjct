@@ -1,7 +1,37 @@
 @import "src/shared/styles/mixins";
 
 .ThemeSwitcher {
-  height: 20px;
+  position: relative;
+  width: 70px;
+  background-color: var(--bg-collor);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  height: 30px;
+  overflow: hidden;
 }
 
-.ico { @include icoStandardSettings; }
+.switcherBackPlate {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border: 1px solid silver;
+  border-radius: inherit;
+  background-color: #727272;
+  transition: all .3s ease;
+  transition-property: width, border;
+}
+
+.checked {
+  width: 68px;
+  border: 1px solid #72ff6c;
+}
+
+.ico {
+  margin-right: 3px;
+  height: 24px;
+  z-index: 10;
+  @include icoStandardSettings;
+}

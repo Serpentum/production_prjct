@@ -1,3 +1,11 @@
 {
-  "currentLang": "ENG"
+  "currentLang": "ENG",
+  "pageTitle": {
+    "mainPageTitle": "Main page",
+    "aboutPageTitle": "About"
+  },
+  "navigationLinks": {
+    "/": "Main",
+    "/about": "About"
+  }
 }
