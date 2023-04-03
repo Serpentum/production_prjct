@@ -11,3 +11,12 @@
   min-height: 100vh;
   transition: color .4s ease;
 }
+
+.layout_wrapper {
+  display: flex;
+}
+
+.content_wrapper {
+  width: var(--content-width);
+  margin: 0 auto;
+}

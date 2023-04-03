@@ -1,9 +1,9 @@
-import webpack, {WebpackPluginInstance} from "webpack";
+import webpack, {DefinePlugin, WebpackPluginInstance} from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import {BuildOptions} from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
-export function buildPlugins({paths}: BuildOptions): WebpackPluginInstance[] {
+export function buildPlugins({paths, isDev}: BuildOptions): WebpackPluginInstance[] {
 
   const progressPlugin = new webpack.ProgressPlugin()
   const htmlWebpackPlugin = new HtmlWebpackPlugin({
@@ -13,10 +13,14 @@ export function buildPlugins({paths}: BuildOptions): WebpackPluginInstance[] {
     filename: 'css/[name].[contenthash:8].css',
     chunkFilename: 'css/[name].[contenthash:8].css'
   })
+  const globalDefine = new DefinePlugin({
+    __IS_DEV__: JSON.stringify(isDev)
+  })
 
   return [
     htmlWebpackPlugin,
     progressPlugin,
     cssExtractorPlugin,
+    globalDefine,
   ]
 }
