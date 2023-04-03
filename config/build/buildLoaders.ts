@@ -44,7 +44,20 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
     ],
   }
 
+  const babelLoader = {
+    test: /\.(js|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ['@babel/preset-env'],
+        plugins: [options.isDev && require.resolve('react-refresh/babel')].filter(Boolean),
+      }
+    }
+  }
+
   return [
+    babelLoader,
     typescriptLoader,
     sassLoader,
     svgrLoader,

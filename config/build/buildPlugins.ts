@@ -3,6 +3,8 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import {BuildOptions} from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+
 export function buildPlugins({paths, isDev}: BuildOptions): WebpackPluginInstance[] {
 
   const progressPlugin = new webpack.ProgressPlugin()
@@ -22,5 +24,7 @@ export function buildPlugins({paths, isDev}: BuildOptions): WebpackPluginInstanc
     progressPlugin,
     cssExtractorPlugin,
     globalDefine,
-  ]
+    isDev && new webpack.HotModuleReplacementPlugin(),
+    isDev && new ReactRefreshWebpackPlugin(),
+  ].filter(Boolean)
 }
