@@ -1,4 +1,4 @@
 @mixin textColorTransform($color) {
-  transition: color .4s ease;
+  transition: color var(--common-transition);
   color: $color;
 }

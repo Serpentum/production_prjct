@@ -2,6 +2,14 @@
 
 .LanguageSwitcher {
   margin-left: auto;
+  border: 1px solid transparent;
+  padding: 3px;
+  border-radius: 5px;
+  transition: border var(--common-transition);
+
+  &:hover {
+    border: 1px solid var(--border-color);
+  }
 }
 
 .switcher {

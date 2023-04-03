@@ -3,7 +3,7 @@
   width: var(--sidebar-width);
   background-color: var(--navbar-bg-color);
   border-right: var(--border-color) 2px solid;
-  transition: width .3s ease;
+  transition: width var(--common-transition);
 
   position: relative;
 }
