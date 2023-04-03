@@ -16,7 +16,7 @@ export const ThemeSwitcher = ({className}: IThemeSwitcherProps) => {
   return (
     <div className={classNames(cls.ThemeSwitcher, {}, [className])}>
       <Button onClick={toggleTheme} theme={ThemeButton.CLEAR}>
-        {theme === Theme.DEFAULT ? <ThemeDarkIco /> : <ThemeDefaultIco />}
+        {theme === Theme.DEFAULT ? <ThemeDarkIco className={cls.ico} /> : <ThemeDefaultIco className={cls.ico} />}
       </Button>
     </div>
   );

@@ -2,3 +2,8 @@
   transition: color var(--common-transition);
   color: $color;
 }
+
+@mixin icoStandardSettings() {
+  transition: fill var(--common-transition);
+  fill: var(--icon-fill)
+}

@@ -1,3 +1,7 @@
-.ThemeSwitcher {
+@import "src/shared/styles/mixins";
 
+.ThemeSwitcher {
+  height: 20px;
 }
+
+.ico { @include icoStandardSettings; }

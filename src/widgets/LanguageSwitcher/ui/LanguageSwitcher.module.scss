@@ -8,6 +8,10 @@
 
   &:hover {
     border: 1px solid var(--border-color);
+
+    .ico {
+      fill: var(--icon-fill-hover);
+    }
   }
 }
 
@@ -18,10 +22,8 @@
 }
 
 .ico {
-  fill: var(--icon-fill);
+  @include icoStandardSettings;
 }
 
-.lang {
-  @include textColorTransform(var(--primary-collor));
-}
+.lang { @include textColorTransform(var(--primary-collor)); }
 
