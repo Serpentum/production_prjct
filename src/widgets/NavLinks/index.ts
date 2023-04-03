@@ -1,4 +1,4 @@
-import {NavLinks} from "widgets/NavLinks/ui/NavLinks";
+import { NavLinks } from 'widgets/NavLinks/ui/NavLinks'
 
 export {
   NavLinks

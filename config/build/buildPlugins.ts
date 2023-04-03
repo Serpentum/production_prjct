@@ -1,11 +1,14 @@
-import webpack, {DefinePlugin, WebpackPluginInstance} from "webpack";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import {BuildOptions} from "./types/config";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import webpack, { DefinePlugin, WebpackPluginInstance } from 'webpack'
+import { BuildOptions } from './types/config'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const ESLintPlugin = require('eslint-webpack-plugin')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
-export function buildPlugins({paths, isDev}: BuildOptions): WebpackPluginInstance[] {
+export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInstance[] {
 
   const progressPlugin = new webpack.ProgressPlugin()
   const htmlWebpackPlugin = new HtmlWebpackPlugin({
@@ -26,5 +29,10 @@ export function buildPlugins({paths, isDev}: BuildOptions): WebpackPluginInstanc
     globalDefine,
     isDev && new webpack.HotModuleReplacementPlugin(),
     isDev && new ReactRefreshWebpackPlugin(),
+    new ESLintPlugin({
+      extensions: ['js', 'ts', 'tsx', 'jsx'],
+      context: paths.root,
+      fix: true
+    })
   ].filter(Boolean)
 }

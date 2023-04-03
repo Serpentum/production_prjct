@@ -5,6 +5,8 @@ export interface BuildPaths {
   build: string
   html: string
   src: string
+  eslint: string
+  root: string
 }
 
 export interface BuildEnv {

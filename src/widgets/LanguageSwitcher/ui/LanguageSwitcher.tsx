@@ -1,20 +1,20 @@
-import {classNames} from "shared/lib/helpers/classNames";
+import { classNames } from 'shared/lib/helpers/classNames'
 import cls from './LanguageSwitcher.module.scss'
-import LocalisationIco from "shared/assets/icons/localisation.svg"
-import {Button, ThemeButton} from "shared/ui/Button/ui/Button";
-import {useTranslation} from "react-i18next";
+import LocalisationIco from 'shared/assets/icons/localisation.svg'
+import { Button, ThemeButton } from 'shared/ui/Button/ui/Button'
+import { useTranslation } from 'react-i18next'
 
 export enum SupportLang {
-  RU = "ru",
-  EN = "en",
+  RU = 'ru',
+  EN = 'en',
 }
 
 interface IThemeSwitcherProps {
   className?: string
 }
 
-export const LanguageSwitcher = ({className}: IThemeSwitcherProps) => {
-  const {t, i18n} = useTranslation("common")
+export const LanguageSwitcher = ({ className }: IThemeSwitcherProps) => {
+  const { t, i18n } = useTranslation('common')
 
   const toggleLang = () => {
     i18n.language === SupportLang.RU
@@ -28,9 +28,9 @@ export const LanguageSwitcher = ({className}: IThemeSwitcherProps) => {
         onClick={toggleLang}
         theme={ThemeButton.CLEAR}
       >
-        <p className={cls.lang}>{t("currentLang")}</p>
+        <p className={cls.lang}>{t('currentLang')}</p>
         <LocalisationIco className={cls.ico} />
       </Button>
     </div>
-  );
-};
+  )
+}

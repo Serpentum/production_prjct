@@ -1,15 +1,15 @@
-import {FC} from "react";
+import { FC } from 'react'
 import cls from './Navbar.module.scss'
-import {classNames} from "shared/lib/helpers/classNames";
-import {ThemeSwitcher} from "widgets/ThemeSwitcher";
-import {LanguageSwitcher} from "widgets/LanguageSwitcher";
-import {NavLinks} from "widgets/NavLinks";
+import { classNames } from 'shared/lib/helpers/classNames'
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
+import { LanguageSwitcher } from 'widgets/LanguageSwitcher'
+import { NavLinks } from 'widgets/NavLinks'
 
 interface INavbarProps {
   className?: string
 }
 
-export const Navbar: FC<INavbarProps> = ({className}) => {
+export const Navbar: FC<INavbarProps> = ({ className }) => {
   return (
     <div className={classNames(cls.navbar, {}, [className])}>
       <div className={cls.rightSide}>
@@ -18,5 +18,5 @@ export const Navbar: FC<INavbarProps> = ({className}) => {
         <LanguageSwitcher />
       </div>
     </div>
-  );
-};
+  )
+}

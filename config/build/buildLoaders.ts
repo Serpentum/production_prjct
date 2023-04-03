@@ -1,6 +1,6 @@
-import {RuleSetRule} from "webpack";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import {BuildOptions} from "./types/config";
+import { RuleSetRule } from 'webpack'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { BuildOptions } from './types/config'
 
 export function buildLoaders(options: BuildOptions): RuleSetRule[] {
 
@@ -15,7 +15,7 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
     use: [
       options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       {
-        loader: "css-loader",
+        loader: 'css-loader',
         options: {
           modules: {
             auto: /\.module\.s[ac]ss$/i,
@@ -25,7 +25,7 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
           },
         },
       },
-      "sass-loader",
+      'sass-loader',
     ],
   }
 
@@ -48,7 +48,7 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
     test: /\.(js|jsx|tsx)$/,
     exclude: /node_modules/,
     use: {
-      loader: "babel-loader",
+      loader: 'babel-loader',
       options: {
         presets: ['@babel/preset-env'],
         plugins: [options.isDev && require.resolve('react-refresh/babel')].filter(Boolean),

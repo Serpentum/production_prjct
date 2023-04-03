@@ -1,4 +1,4 @@
-import {LanguageSwitcher, SupportLang} from "./ui/LanguageSwitcher";
+import { LanguageSwitcher, SupportLang } from './ui/LanguageSwitcher'
 
 export {
   LanguageSwitcher,
