@@ -11,7 +11,7 @@ interface INavLinksProps {
 
 export const NavLinks = ({className}: INavLinksProps) => {
   const {pathname} = useLocation()
-  const {t} = useTranslation()
+  const {t} = useTranslation("common")
 
   return (
     <div className={classNames(cls.linksWrapper, {}, [className])}>

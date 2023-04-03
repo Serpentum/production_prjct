@@ -14,7 +14,7 @@ interface IThemeSwitcherProps {
 }
 
 export const LanguageSwitcher = ({className}: IThemeSwitcherProps) => {
-  const {t, i18n} = useTranslation()
+  const {t, i18n} = useTranslation("common")
 
   const toggleLang = () => {
     i18n.language === SupportLang.RU
