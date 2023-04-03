@@ -22,17 +22,19 @@ export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInsta
     __IS_DEV__: JSON.stringify(isDev)
   })
 
+  const esLint = new ESLintPlugin({
+    extensions: ['js', 'ts', 'tsx', 'jsx'],
+    context: paths.root,
+    fix: true
+  })
+
   return [
     htmlWebpackPlugin,
     progressPlugin,
     cssExtractorPlugin,
     globalDefine,
+    esLint,
     isDev && new webpack.HotModuleReplacementPlugin(),
     isDev && new ReactRefreshWebpackPlugin(),
-    new ESLintPlugin({
-      extensions: ['js', 'ts', 'tsx', 'jsx'],
-      context: paths.root,
-      fix: true
-    })
   ].filter(Boolean)
 }
