@@ -1,5 +1,6 @@
 @import "reset";
 @import "fonts";
+@import "src/shared/styles/mixins";
 @import "variables/global";
 @import "themes/default";
 @import "themes/dark";
@@ -7,9 +8,8 @@
 .app {
   font: var(--font-m);
   background-color: var(--bg-collor);
-  color: var(--primary-collor);
   min-height: 100vh;
-  transition: color .4s ease;
+  @include textColorTransform(var(--primary-collor));
 }
 
 .layout_wrapper {

@@ -5,6 +5,7 @@ import {AppLink} from "shared/ui/AppLink";
 import {useLocation} from "react-router-dom";
 import {RouteLinks} from "shared/config/routerConfig/routerConfig";
 import {ThemeSwitcher} from "widgets/ThemeSwitcher";
+import {LanguageSwitcher} from "widgets/LanguageSwitcher";
 
 interface INavbarProps {
   className?: string
@@ -16,6 +17,7 @@ export const Navbar: FC<INavbarProps> = ({className}) => {
   return (
     <div className={classNames(cls.navbar, {}, [className])}>
       <ThemeSwitcher />
+      <LanguageSwitcher />
       <div className={cls.linksWrapper}>
         {
           Object.values(RouteLinks)
