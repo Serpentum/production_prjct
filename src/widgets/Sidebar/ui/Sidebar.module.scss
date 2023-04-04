@@ -4,7 +4,6 @@
   background-color: var(--navbar-bg-color);
   border-right: var(--border-color) 2px solid;
   transition: width var(--common-transition);
-
   position: relative;
 }
 
@@ -16,6 +15,7 @@
   0% {
     width: var(--sidebar-width);
   }
+
   100%{
     width: var(--sidebar-width-collapsed);;
   }

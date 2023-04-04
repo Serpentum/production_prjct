@@ -1,14 +1,10 @@
 .app.default {
-  --bg-collor: #ffffff;
+  --bg-collor: #fff;
   --navbar-bg-color: #f1f1f1;
-
   --primary-collor: #282828;
   --secondary-collor: #151515;
-
   --link-color: #6ba8ff;
-
-  --border-color: rgba(155, 155, 155, 0.5);
-
+  --border-color: rgb(155 155 155 / 50%);
   --icon-fill: #1f1f1f;
-  --icon-fill-hover: rgba(31, 31, 31, 0.4);
+  --icon-fill-hover: rgb(31 31 31 / 40%);
 }

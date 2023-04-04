@@ -9,6 +9,7 @@
   font: var(--font-m);
   background-color: var(--bg-collor);
   min-height: 100vh;
+
   @include textColorTransform(var(--primary-collor));
 }
 

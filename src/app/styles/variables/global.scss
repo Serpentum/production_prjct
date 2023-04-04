@@ -1,20 +1,18 @@
 :root {
-  --font-family-main: Roboto, Serif;
-
+  --font-family-main: roboto, serif;
   --font-size-m: 16px;
   --font-line-m: 24px;
   --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
-
   --font-line-l: 32px;
   --font-size-l: 24px;
   --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
 
-  //sizes
+  // sizes
   --navbar-height: 50px;
   --content-width: 500px;
   --sidebar-width: 300px;
   --sidebar-width-collapsed: 70px;
 
-  //transitions
+  // transitions
   --common-transition: .2s ease;
 }

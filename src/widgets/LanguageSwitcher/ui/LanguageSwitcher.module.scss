@@ -6,6 +6,10 @@
   border-radius: 5px;
   transition: border var(--common-transition);
 
+  .ico {
+    @include icoStandardSettings;
+  }
+
   &:hover {
     border: 1px solid var(--border-color);
 
@@ -19,10 +23,6 @@
   display: flex;
   align-items: center;
   gap: 5px;
-}
-
-.ico {
-  @include icoStandardSettings;
 }
 
 .lang { @include textColorTransform(var(--primary-collor)); }
