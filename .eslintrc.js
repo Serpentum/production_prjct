@@ -51,5 +51,6 @@ module.exports = {
       'allowSeparatedGroups': false,
     }],
     'react/react-in-jsx-scope': 'off',
+    'react/self-closing-comp': 'error'
   }
 }

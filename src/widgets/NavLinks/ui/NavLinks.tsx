@@ -12,12 +12,13 @@ interface INavLinksProps {
 export const NavLinks = ({ className }: INavLinksProps) => {
   const { pathname } = useLocation()
   const { t } = useTranslation('common')
+  const notForNavPath = [RoutePath.not_found]
 
   return (
     <div className={classNames(cls.linksWrapper, {}, [className])}>
       {
         Object.values(RoutePath)
-          .map(path =>
+          .map(path => !notForNavPath.includes(path) &&
             <AppLink
               key={path}
               to={path}
