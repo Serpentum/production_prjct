@@ -24,7 +24,7 @@ export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInsta
 
   const esLint = new ESLintPlugin({
     extensions: ['js', 'ts', 'tsx', 'jsx'],
-    context: paths.root,
+    context: paths.eslint,
     fix: true
   })
 
